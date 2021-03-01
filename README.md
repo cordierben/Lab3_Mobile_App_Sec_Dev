@@ -12,7 +12,7 @@ First of all, I’ve decided to do this project mainly in Kotlin (activities in 
 This application is composed of three activities: 
 
 
-•	The “MainActivity”, which is the main page of the application, where the user has to authenticate himself through a fingerprint process. Once it’s done, he has access (widgets become visible) to a button to update his accounts (connected with MockAPI) and another button to go to a different activity which will display his accounts.
+•	The “MainActivity”, which is the main page of the application, where the user has to authenticate himself through a fingerprint process. Once it’s done, he has access (widgets become visible) to a button to update his accounts (connected with MockAPI) and another button to go to a different activity which will display his accounts. It also displays a welcome message by retrieving informations about the user with a GET request on "config/1".
 
 
 
