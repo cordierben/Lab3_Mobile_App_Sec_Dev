@@ -19,7 +19,7 @@ This application is composed of three activities:
 
 
 
-•	The “AccountsOff” activity, which displays the accounts of the user offline, retrieving data from the phone’s database, which have been updated before through the Main Activity. The user also has access to a button which gives access to the activity to add a new account.
+•	The “AccountsOff” activity, which displays the accounts of the user offline, retrieving data from the phone’s database, which have been updated before through the Main Activity. The user also has access to a button which gives access to the activity to add a new account. This activity contains a scrollview, with multiple Linear Layout, in order to scroll through the accounts, well presented with their informations.
 
 
 
