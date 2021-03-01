@@ -5,7 +5,7 @@ During this project, we had to develop an Android application concerning a secur
 First of all, I’ve decided to do this project mainly in Kotlin (activities in Kotlin, Classes in Java as Enigma doesn’t support Kotlin yet) because I’ve already done some Android App Development in Java in the past, and this project was the opportunity to discover a new language.
 
 
-##Description
+**Description**
 
 This application is composed of three activities: 
 
