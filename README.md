@@ -1,4 +1,4 @@
-##Introduction
+**Introduction**
 
 During this project, we had to develop an Android application concerning a secure bank account, which can access online data, update information locally on the phone, and allow only the owner of the account to access his data. In this report, we will cover the main points of this project.
 
@@ -40,7 +40,7 @@ This application is also composed of two more Java classes:
 
 
 
-##Authenticate the user
+**Authenticate the user**
 
 As we said in the previous part, the user needs first to authenticate through a fingerprint process.
 
@@ -49,7 +49,7 @@ First, we need to check if we can create this fingerprint prompt with checkBiome
 Then, when clicking on the authenticate button, the app creates a biometric prompt (with a title, a subtitle, a cancel button). When it receives a signal, it calls the function authenticate of the prompt with the authenticationCallback. Then, whether the authentication failed, and it displays a toast with the error, whether it succeed, and it set the visibility to visible to all the widgets of this activity, as the user can now have access to the accounts.
 
 
-Communication with the API and safety
+**Communication with the API and safety**
 
 To update, read and create accounts, we need to communicate with MockAPI securely. All this communication takes place in the Main Activity, when clicking on the update button. This communication happens in two steps: retrieve the user, and then retrieving his data. In our case, we will suppose the user has the id 1.
 
@@ -64,7 +64,7 @@ However, we also want to create accounts on MockAPI. To do so, we once again ope
 
 
 
-##Store data Offline and safety
+**Store data Offline and safety**
 
 We want our app to be usable offline. So, the idea is to store accounts offline, on the phone, and to create a button which updates the account when the phone is online. To store the data, we will use the SQLite database integrated to Android Studio that I’ve used in my previous projects. This database is very safe, more than a file, because it can’t be accessed through the files browser of the phone, and useful, as we can interact with the database very easily.
 
@@ -76,7 +76,7 @@ Finally, we can interact with the database through various methods to read, upda
 
 
 
-##Hide URL from source code
+**Hide URL from source code**
 
 In order to improve the security of our application, we don’t want anyone to have access to URL from the source code of our application, like the link to the accounts of the user. To hide them, we are going to use an obfuscator string encryption plugin, Enigma.
 
