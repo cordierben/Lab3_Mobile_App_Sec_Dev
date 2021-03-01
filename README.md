@@ -1,3 +1,5 @@
+**Mobile Application Development Project, By Benoît Cordier, IOS 1**
+
 **Introduction**
 
 During this project, we had to develop an Android application concerning a secure bank account, which can access online data, update information locally on the phone, and allow only the owner of the account to access his data. In this report, we will cover the main points of this project.
