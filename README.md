@@ -38,7 +38,7 @@ This application is also composed of two more Java classes:
 
 •	“Crypto”, which only stands to store two String which will be encrypted by Enigma (as Enigma doesn’t work with Kotlin).
 
-•	“DatabaseManager”, which is the class to manage the database and perform operations onto it (select, insert, update, …).
+•	“DatabaseManager”, which is the class to manage the database and perform operations onto it (select, insert, update, …), and encrypt and decrypt data.
 
 
 
@@ -55,26 +55,26 @@ Then, when clicking on the authenticate button, the app creates a biometric prom
 
 To update, read and create accounts, we need to communicate with MockAPI securely. All this communication takes place in the Main Activity, when clicking on the update button. This communication happens in two steps: retrieve the user, and then retrieving his data. In our case, we will suppose the user has the id 1.
 
-To create a secure connection, we will need the class HttpsURLConnection. This class will, when creating a connection with a given URL with a certificate issued by a well-known CA, enable the handshake between the SSL client (application) and the server. The server needs to prove it has the private key by signing its certificate with public-key cryptography. As MockAPI used a known Certificate Authority, using HttpsURLConnection is sufficient (as said in the Android documentation). With this, we can communicate securely with the API.
+To create a secure connection, we will need the class HttpsURLConnection. This class will, when creating a connection with a given URL with a certificate issued by a well-known CA, enable the handshake between the TLS client (application) and the server. The server needs to prove it has the private key by signing its certificate with public-key cryptography. As MockAPI used a known Certificate Authority, using HttpsURLConnection is sufficient (as said in the Android documentation). With this, we can communicate securely with the API.
 
 
-Then, we want to read data from the account, in order to update if needed on the application. The default type of request is GET, so we don’t need to specify a type. We only need to call the function getInputStream () from the class HttpsURLConnection, which will return all the data as an inputStream. Then we convert it to String, and then to JSON, in order to retrieve data and classify it to update the offline database.
+Then, we want to read data from the account, in order to update if needed on the application. The default type of request is GET, so we don’t need to specify a type. We only need to call the function getInputStream () from the class HttpsURLConnection, which will return all the data send by the server.
 
- 
 
-However, we also want to create accounts on MockAPI. To do so, we once again open a HTTPS connection with the URL of the accounts. We need to set the type of request to POST (we need to enable it on MockAPI). Then we build a string in a JSON format with the data coming from the EditText of the activity. Like this, the website will be able to read and to classify it as it is on the server. Before sending it, we need to provide the length of the string, the properties (“content-type” and notify that it is JSON). Then we can send it using outputStream and retrieve a validation with inputStream.
+However, we also want to create accounts on MockAPI. To do so, we once again open a HTTPS connection with the URL of the accounts. We need to set the type of request to POST (we need to enable it on MockAPI). Like this, the website will be able to read and to classify the JSON on the server. Then we can send it using outputStream and retrieve a validation with inputStream.
 
 
 
 **Store data Offline and safety**
 
-We want our app to be usable offline. So, the idea is to store accounts offline, on the phone, and to create a button which updates the account when the phone is online. To store the data, we will use the SQLite database integrated to Android Studio that I’ve used in my previous projects. This database is very safe, more than a file, because it can’t be accessed through the files browser of the phone, and useful, as we can interact with the database very easily.
+We want our app to be usable offline. So, the idea is to store accounts offline, on the phone, and to create a button which updates the account when the phone is online. To store the data, we will use the SQLite database integrated to Android Studio that I’ve used in my previous projects. This database is very safe, more than a file, because it can’t be accessed through the files browser of the phone or any other app, and useful, as we can interact with the database very easily.
 
-We will interact with the database through the class “DatabaseManager”. With the constructor we instantiate the database, and then, Inside the onCreate of this class, we create the tables if they don’t exist.
+The security of this part is composed of three layer :
+-First layer : the database is crypted and can't be accessed from the phone
+-Second layer : data inside the database is crypted with a secret custom key based on a password which I'm the only one to know
+-Third layer : this password is himself crypted.
 
- 
-
-Finally, we can interact with the database through various methods to read, update, and insert data. For example, the method insertAccount is called when the user adds an account. The account is added on the server, and at the same time on the local database with this method with an insert statement.
+Therefore, data is completely protected.We will interact with the database through the class “DatabaseManager”, to create tables, insert or select data.
 
 
 
