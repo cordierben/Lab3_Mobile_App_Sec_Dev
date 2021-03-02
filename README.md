@@ -56,6 +56,7 @@ On most recent version, you can even choose between facial recognition or finger
 
 ![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/fingerprint.png)
 
+![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/facialRecognition.png)
 
 **Communication with the API and safety**
 
