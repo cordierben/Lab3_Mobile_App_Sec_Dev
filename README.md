@@ -72,9 +72,9 @@ However, we also want to create accounts on MockAPI. To do so, we once again ope
 We want our app to be usable offline. So, the idea is to store accounts offline, on the phone, and to create a button which updates the account when the phone is online. To store the data, we will use the SQLite database integrated to Android Studio that I’ve used in my previous projects. This database is very safe, more than a file, because it can’t be accessed through the files browser of the phone or any other app, and useful, as we can interact with the database very easily.
 
 The security of this part is composed of three layers!
--First layer : the database is crypted and can't be accessed from the phone
--Second layer : data inside the database is crypted with a secret custom key based on a password which I'm the only one to know
--Third layer : this password is himself crypted...
+*First layer : the database is crypted and can't be accessed from the phone
+*Second layer : data inside the database is crypted with a secret custom key based on a password which I'm the only one to know
+*Third layer : this password is himself crypted...
 
 Therefore, data is completely protected.We will interact with the database through the class “DatabaseManager”, to create tables, insert or select data.
 
