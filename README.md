@@ -46,7 +46,7 @@ This application is also composed of two more Java classes:
 
 As we said in the previous part, the user needs first to authenticate through a fingerprint process.
 
-First, we need to check if we can create this fingerprint prompt with checkBiometricSupport(). We first check that keyguard is secured by a PIN, pattern or password or a SIM card is currently locked, and then if the application has permissions to use biometric. It displays an error toast if not in both cases. It also checks if a fingerprint has been enrolled on the phone.
+First, we need to check if we can create this fingerprint prompt with checkBiometricSupport(). We first check if the Android version is sufficient, then if there is a hardware, if it's available and finally if a fingerprint has been enrolled into the settings. I DECIDED TO NOT DEVELOP ANOTHER WAY TO AUTHENTIFY (IF ONE OF THESE CASE IS NOT MET) AS IT WON'T BE SECURED ENOUGH FOR THIS APP.
 
 Then, when clicking on the authenticate button, the app creates a biometric prompt (with a title, a subtitle, a cancel button). When it receives a signal, it calls the function authenticate of the prompt with the authenticationCallback. Then, whether the authentication failed, and it displays a toast with the error, whether it succeed, and it set the visibility to visible to all the widgets of this activity, as the user can now have access to the accounts.
 
