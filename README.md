@@ -85,7 +85,9 @@ Therefore, data is completely protected.We will interact with the database throu
 
 **Hide URL from source code**
 
-In order to improve the security of our application, we don’t want anyone to have access to URL from the source code of our application, like the link to the accounts of the user. To hide them, we are going to use an obfuscator string encryption plugin, Enigma.
+In order to improve the security of our application and fight against reverse engineering, we don’t want anyone to have access to URL from the source code of our application, like the link to the accounts of the user. To hide them, we are going to use an obfuscator string encryption plugin, Enigma.
 
 This plugin is very easy to use, as we just need to enable it and run it on our application. To integrate it, we just need to create a git repository of our application if hasn’t been made. Then we just need to add the maven repository add the classpath in the gradle of the project, and to add the plugin inside the gradle of the app. We can finally set the options of Enigma. In my app, I decided to inject fake keys, as it’s safer. Then, we ca compile the app: the strings are hided in a strange binary language.
+
+![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/enigma.png)
 
