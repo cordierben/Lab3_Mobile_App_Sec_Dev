@@ -2,7 +2,9 @@
 
 **Introduction**
 
-During this project, we had to develop an Android application concerning a secure bank account, which can access online data, update information locally on the phone, and allow only the owner of the account to access his data. In this report, we will cover the main points of this project.
+During this project, we had to develop an Android application concerning a secure bank account, which can access online data, update information locally on the phone, and allow only the owner of the account to access his data. I created the app called "SafeBank", which responds to these expectations. In this report, we will cover the main points of this project.
+
+![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/safebank.png)
 
 First of all, I’ve decided to do this project mainly in Kotlin (activities in Kotlin, Classes in Java as Enigma doesn’t support Kotlin yet) because I’ve already done some Android App Development in Java in the past, and this project was the opportunity to discover a new language.
 
