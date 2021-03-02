@@ -52,6 +52,8 @@ First, we need to check if we can create this fingerprint prompt with checkBiome
 
 Then, when clicking on the authenticate button, the app creates a biometric prompt (with a title, a subtitle, a cancel button). When it receives a signal, it calls the function authenticate of the prompt with the authenticationCallback. Then, whether the authentication failed, and it displays a toast with the error, whether it succeed, and it set the visibility to visible to all the widgets of this activity, as the user can now have access to the accounts.
 
+On most recent version, you can even choose between facial recognition or fingerprint!
+
 ![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/fingerprint.png)
 
 
