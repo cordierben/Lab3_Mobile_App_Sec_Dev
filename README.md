@@ -15,14 +15,14 @@ This application is composed of three activities:
 •	The “MainActivity”, which is the main page of the application, where the user has to authenticate himself through a fingerprint process. Once it’s done, he has access (widgets become visible) to a button to update his accounts (connected with MockAPI) and another button to go to a different activity which will display his accounts. It also displays a welcome message by retrieving informations about the user with a GET request on "config/1".
 
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/main.png)
 
 
 
 •	The “AccountsOff” activity, which displays the accounts of the user offline, retrieving data from the phone’s database, which have been updated before through the Main Activity. The user also has access to a button which gives access to the activity to add a new account. This activity contains a scrollview, with multiple Linear Layout, in order to scroll through the accounts, well presented with their informations.
 
 
-
+![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/list.png)
 
 
 
@@ -31,7 +31,7 @@ This application is composed of three activities:
 
 •	The “AddAccount” activity, to create a new account in MockAPI, and which provides a few TextEdit widget to write information about this account. It also provides a Cancel Button, which goes back to the AccountsOff activity and an Add Button, to add the account and directly go back to the AccountsOff activity (only if the user is connected to Internet). Amount is a decimal type EditText. Finally, there is a check if the currency is a valid one, with the help of the Currency Class from Java. It directly updates the local database.
 
-
+![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/add.png)
 
 
 This application is also composed of two more Java classes:
