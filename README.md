@@ -50,6 +50,8 @@ First, we need to check if we can create this fingerprint prompt with checkBiome
 
 Then, when clicking on the authenticate button, the app creates a biometric prompt (with a title, a subtitle, a cancel button). When it receives a signal, it calls the function authenticate of the prompt with the authenticationCallback. Then, whether the authentication failed, and it displays a toast with the error, whether it succeed, and it set the visibility to visible to all the widgets of this activity, as the user can now have access to the accounts.
 
+![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/fingerprint.png)
+
 
 **Communication with the API and safety**
 
@@ -69,14 +71,14 @@ However, we also want to create accounts on MockAPI. To do so, we once again ope
 
 We want our app to be usable offline. So, the idea is to store accounts offline, on the phone, and to create a button which updates the account when the phone is online. To store the data, we will use the SQLite database integrated to Android Studio that I’ve used in my previous projects. This database is very safe, more than a file, because it can’t be accessed through the files browser of the phone or any other app, and useful, as we can interact with the database very easily.
 
-The security of this part is composed of three layer :
+The security of this part is composed of three layers!
 -First layer : the database is crypted and can't be accessed from the phone
 -Second layer : data inside the database is crypted with a secret custom key based on a password which I'm the only one to know
--Third layer : this password is himself crypted.
+-Third layer : this password is himself crypted...
 
 Therefore, data is completely protected.We will interact with the database through the class “DatabaseManager”, to create tables, insert or select data.
 
-
+![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/db.png)
 
 **Hide URL from source code**
 
