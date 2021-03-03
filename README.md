@@ -42,6 +42,8 @@ This application is also composed of two more Java classes:
 
 •	“DatabaseManager”, which is the class to manage the database and perform operations onto it (select, insert, update, …), and encrypt and decrypt data.
 
+Every time you leave the app, the app closes for security reasons.
+
 
 
 **Authenticate the user**
