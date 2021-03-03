@@ -71,7 +71,7 @@ To update, read and create accounts, we need to communicate with MockAPI securel
 To create a secure connection, we will need the class HttpsURLConnection. This class will, when creating a connection with a given URL with a certificate issued by a well-known CA, enable the handshake between the TLS client (application) and the server. The server needs to prove it has the private key by signing its certificate with public-key cryptography. As MockAPI used a known Certificate Authority, using HttpsURLConnection is sufficient (as said in the Android documentation). With this, we can communicate securely with the API.
 
 
-Then, we want to read data from the account, in order to update if needed on the application. The default type of request is GET, so we don’t need to specify a type. We only need to call the function getInputStream () from the class HttpsURLConnection, which will return all the data send by the server.
+Then, we want to read data from the account, in order to update if needed on the application. The default type of request is GET, so we don’t need to specify a type. We only need to call the function getInputStream () from the class HttpsURLConnection, which will return all the data send by the server. (Have you noticed that little animation when clicking on the refresh button?).
 
 
 However, we also want to create accounts on MockAPI. To do so, we once again open a HTTPS connection with the URL of the accounts. We need to set the type of request to POST (we need to enable it on MockAPI). Like this, the website will be able to read and to classify the JSON on the server. Then we can send it using outputStream and retrieve a validation with inputStream.
