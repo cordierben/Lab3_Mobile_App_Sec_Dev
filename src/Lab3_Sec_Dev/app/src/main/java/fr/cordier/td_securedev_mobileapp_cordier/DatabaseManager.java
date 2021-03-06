@@ -25,7 +25,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Bank.db";
     private static final int DATABASE_VERSION = 7;
     private static final String AES="AES";
-    private static final String pass="7kiwi7";
+    private static final String pass="734564327";
 
     public DatabaseManager(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
