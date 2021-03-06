@@ -91,7 +91,7 @@ The security of this part is composed of three layers!
 
 •	Second layer : data inside the database is crypted with a secret custom key based on a password which I'm the only one to know
 
-•	Third layer : this password is himself crypted...
+•	Third layer : this password is itself crypted...
 
 Therefore, data is completely protected.We will interact with the database through the class “DatabaseManager”, to create tables, insert or select data.
 
