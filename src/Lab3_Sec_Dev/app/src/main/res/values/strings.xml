@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TD_SecureDev_MobileApp_CORDIER</string>
+    <string name="touch">Touch the icon to \nrefresh your account</string>
+    <string name="welcome">Welcome\n</string>
+    <string name="authorization">You need to authenticate using\n fingerprint first</string>
+    <string name="create">Create a new account</string>
+</resources>
