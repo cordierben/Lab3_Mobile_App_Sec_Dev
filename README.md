@@ -8,7 +8,7 @@ During this project, we had to develop an Android application concerning a secur
 
 First of all, I’ve decided to do this project mainly in Kotlin (activities in Kotlin, Classes in Java as Enigma doesn’t support Kotlin yet) because I’ve already done some Android App Development in Java in the past, and this project was the opportunity to discover a new language. Before sending the application, I've analyzed it using smali/baksmali and APKTool.
 
-**DISCLAIMER : STRINGS ARE NOT ENCRYPTED IN THE SRC FOLDER, BUT THEY ARE IN THE APK AND WILL APPEAR ENCRYPTED IF YOU REVERSE ENGINEERING THE APP. THIS IS ENIGMA PLUGIN WHICH MAKES ENCRYPTION TRANSPARENT FOR THE USER.**
+**DISCLAIMER : STRINGS ARE NOT ENCRYPTED IN THE SRC FOLDER, BUT THEY ARE IN THE APK AND WILL APPEAR ENCRYPTED IF YOU REVERSE ENGINEERING THE APP. THIS IS ENIGMA PLUGIN WHICH MAKES ENCRYPTION TRANSPARENT FOR THE USER. I'VE PUT THE FILES IN THE ENCRYPTED VERSION IN THE ENCRYPTED_FILES FOLDER. **
 
 
 **Description**
