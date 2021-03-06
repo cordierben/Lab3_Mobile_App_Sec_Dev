@@ -6,7 +6,7 @@ During this project, we had to develop an Android application concerning a secur
 
 ![alt text](https://github.com/cordierben/Lab3_Mobile_App_Sec_Dev/blob/main/screen/safebank.png)
 
-First of all, I’ve decided to do this project mainly in Kotlin (activities in Kotlin, Classes in Java as Enigma doesn’t support Kotlin yet) because I’ve already done some Android App Development in Java in the past, and this project was the opportunity to discover a new language.
+First of all, I’ve decided to do this project mainly in Kotlin (activities in Kotlin, Classes in Java as Enigma doesn’t support Kotlin yet) because I’ve already done some Android App Development in Java in the past, and this project was the opportunity to discover a new language. Before sending the application, I've analyzed it using smali/baksmali and APKTool.
 
 
 **Description**
@@ -68,7 +68,8 @@ On most recent version, you can even choose between facial recognition or finger
 
 To update, read and create accounts, we need to communicate with MockAPI securely. All this communication takes place in the Main Activity, when clicking on the update button. This communication happens in two steps: retrieve the user, and then retrieving his data. In our case, we will suppose the user has the id 1.
 
-To create a secure connection, we will need the class HttpsURLConnection. This class will, when creating a connection with a given URL with a certificate issued by a well-known CA, enable the handshake between the TLS client (application) and the server. The server needs to prove it has the private key by signing its certificate with public-key cryptography. As MockAPI used a known Certificate Authority, using HttpsURLConnection is sufficient (as said in the Android documentation). With this, we can communicate securely with the API.
+To create a secure connection, we will need the class HttpsURLConnection. This class will, when creating a connection with a given URL with a certificate issued by a well-known CA, enable the handshake between the TLS client (application) and the server. The server needs to prove it has the private key by signing its certificate with public-key cryptography. Using HttpsURLConnection is sufficient (as said in the Android documentation).
+I've decided to add a network security configuration, to trust a certain set of CA, using a network security configuration file in the manifest.
 
 
 Then, we want to read data from the account, in order to update if needed on the application. The default type of request is GET, so we don’t need to specify a type. We only need to call the function getInputStream () from the class HttpsURLConnection, which will return all the data send by the server. (Have you noticed that little animation when clicking on the refresh button?).
